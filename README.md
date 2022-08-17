@@ -33,7 +33,7 @@ Developers using this project should already have Python3, pip, virtualenv and n
 **1. Clone the project on your local environment**
 
 ```
-git clone https://github.com/alikhoudar/trivia_proj.git
+git clone 
 
 cd "Your Local Folder where the project was downloaded"
 ```
