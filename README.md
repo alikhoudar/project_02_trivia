@@ -20,7 +20,7 @@ All backend code follows [PEP8 style guidelines](https://www.python.org/dev/peps
 
 #### Project homepage
 
-![](C:\Users\ALI\AppData\Roaming\marktext\images\2022-08-17-15-11-30-image.png)
+![](homepage.png)
 
 # Getting Started
 
