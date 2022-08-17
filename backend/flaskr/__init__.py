@@ -9,8 +9,9 @@ from models import setup_db, Question, Category
 
 QUESTIONS_PER_PAGE = 10
 
-# create a helper function to get a pagination of retrieved question from the DB
-# based on number of question per page
+# create a helper function to get a pagination of retrieved question
+# from the DB based on number of question per page
+
 def paginated_questions(request, selection):
     page = request.args.get('page', 1, type=int)
     start = (page - 1) * QUESTIONS_PER_PAGE
@@ -20,8 +21,8 @@ def paginated_questions(request, selection):
     current_questions = questions[start:end]
     return current_questions
 
-# create a helper function to get category type based on given list of categories and 
-# category id
+# create a helper function to get category type based on given list  
+# of categories and category id
 def get_category_type(categories, category_id):
     for category in categories:
         if category['id'] == category_id:
@@ -346,6 +347,16 @@ def create_app(test_config=None):
                 'error': 400,
                 'message': 'bad request'
             }), 400
+        )
+
+    @app.errorhandler(500)
+    def bad_request(error):
+        return (
+            jsonify({
+                'success': False,
+                'error': 500,
+                'message': 'internal server error'
+            }), 500
         )
 
     return app
